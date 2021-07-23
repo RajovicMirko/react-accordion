@@ -11,7 +11,6 @@ const defaultState = {
 const reducerTypes = {
   init: 'INIT_STATE_ON_MOUNT',
   clear: 'CLEAR_STATE_ON_UNMOUNT',
-  setDefaultIndex: 'SET_DEFAULT_ACTIVE_INDEX',
   setIndex: 'SET_ACTIVE_INDEX',
   removeIndex: 'REMOVE_ACTIVE_INDEX',
 }
@@ -26,8 +25,6 @@ const accordionReducer = (state, { type, payload }) => {
       return { ...state, activeIndexes, defaults }
 
     case reducerTypes.clear: return defaultState;
-
-    case reducerTypes.setDefaultIndex: return { ...state, activeIndexes: [payload] };
 
     case reducerTypes.setIndex:
       return isMultiple
